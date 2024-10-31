@@ -4,49 +4,47 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Register</title>
-    <!-- <link rel="stylesheet" href="/styles.css" /> -->
     <style>
+      :root {
+        --theme-color: #c77f5d;
+        --text-color: #05010d8f;
+        --heading-color: #3b3430;
+
+        --button-color: #f1d8cc;
+        --button-hover-color: #f7e5dc;
+        --button-text-color: #c87f5c;
+      }
+
+      a {
+        display: block;
+        text-align: center;
+        margin-top: 2rem;
+        color: var(--theme-color);
+        text-decoration: none;
+        font-size: 1.3rem;
+        transition: color 0.3s;
+      }
+
+      a:hover {
+        text-decoration: underline;
+      }
+
+      button {
+        padding: 1rem;
+        background-color: var(--button-color);
+        border: none;
+        border-radius: 8px;
+        color: var(--button-text-color);
+        font-size: 1.5rem;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+
+      button:hover {
+        background-color: var(--button-hover-color);
+      }
+
       body {
-        :root {
-          /* --theme-color: #f6e4d5; */
-          --theme-color: #c77f5d;
-          --text-color: #05010d8f;
-          --heading-color: #3b3430;
-
-          --button-color: #f1d8cc;
-          --button-hover-color: #f7e5dc;
-          --button-text-color: #c87f5c;
-        }
-
-        a {
-          display: block;
-          text-align: center;
-          margin-top: 2rem;
-          color: var(--theme-color);
-          text-decoration: none;
-          font-size: 1.3rem;
-          transition: color 0.3s;
-        }
-
-        a:hover {
-          text-decoration: underline;
-        }
-
-        button {
-          padding: 1rem;
-          background-color: var(--button-color);
-          border: none;
-          border-radius: 8px;
-          color: var(--button-text-color);
-          font-size: 1.5rem;
-          cursor: pointer;
-          transition: background-color 0.3s;
-        }
-
-        button:hover {
-          background-color: var(--button-hover-color);
-        }
-
         font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
         margin: 0;
         padding: 0;
@@ -66,7 +64,6 @@
         left: 0;
         width: 100%;
         height: 100%;
-        background-image: url("images/wellness.JPG");
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
