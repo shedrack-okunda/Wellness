@@ -1,7 +1,7 @@
 :root {
   --primary-color: #f6e4d5;
   --secondary-color: #c77f5d;
-  --text-color: #05010d8f;
+  --text-color: #05010d;
   --heading-color: #3b3430;
 
   /* button */
@@ -36,19 +36,21 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 
 html {
   font-size: 11px;
   scroll-behavior: smooth;
   line-height: 1.5;
+  font-family: "Montserrat", sans-serif;
 }
 
 body {
   background-color: var(--primary-color) !important;
   color: var(--text-color) !important;
   font-size: 1.8rem;
+  font-family: "Montserrat", sans-serif;
 }
 
 ::-webkit-scrollbar {
@@ -78,7 +80,6 @@ body {
   color: var(--secondary-color);
   text-align: left;
   margin-top: 20px;
-  font-family: "fraunces";
 }
 
 .title-2 {
@@ -86,7 +87,6 @@ body {
   font-weight: var(--fw-600);
   text-align: left;
   color: var(--secondary-color);
-  font-family: "fraunces";
 }
 
 .title--2 {
@@ -95,7 +95,6 @@ body {
   text-align: left;
   color: var(--heading-color);
   margin-top: 30px;
-  font-family: "fraunces";
 }
 
 .italic-1 {
@@ -105,7 +104,6 @@ body {
   font-style: italic;
   color: var(--secondary-color);
   margin: 10px;
-  font-family: "windsong";
 }
 
 .italic-2 {
@@ -113,14 +111,12 @@ body {
   font-weight: var(--fw-600);
   font-style: italic;
   color: var(--heading-color);
-  font-family: "windsong";
 }
 
 .lead {
   text-align: left;
   margin-top: 30px;
   font-size: var(--fs-5) !important;
-  font-family: "inter";
 }
 
 .card-title {
@@ -133,14 +129,12 @@ body {
 .card-text {
   margin-top: 20px;
   font-size: var(--fs-7);
-  font-family: "inter";
 }
 
 .text {
   text-align: left;
   margin: 30px;
   font-size: var(--fs-8);
-  font-family: "inter";
 }
 
 img {
@@ -155,20 +149,11 @@ img {
   padding: 10px 100px !important;
   font-size: var(--fs-8) !important;
   font-weight: var(--fw-700) !important;
-  font-family: "inter";
 }
 
 .btn:hover {
   background-color: var(--btn-hover-background) !important;
   color: var(--btn-text-color) !important;
-}
-
-h3 {
-  font-family: "fraunces";
-}
-
-p {
-  font-family: "inter";
 }
 
 /* Navigation bar */
@@ -215,7 +200,6 @@ p {
   margin-left: 25px;
   text-decoration: none;
   transition: all 0.13s ease;
-  font-family: "inter";
 }
 
 .nav-list li a:hover {
@@ -301,19 +285,6 @@ span {
 /* Events */
 .events {
   background-color: var(--event-background);
-}
-
-/* Big feeling let it rain */
-.rain {
-  background-color: var(--rain-background);
-}
-
-.rain .big-rain p i {
-  color: var(--btn-text-color);
-}
-
-.rain .big-rain p strong {
-  color: var(--btn-text-color);
 }
 
 /* Services */
@@ -411,11 +382,6 @@ span {
   font-weight: var(--fw-700);
   color: var(--btn-text-color);
   cursor: pointer;
-}
-
-/* Podcast */
-.podcast {
-  background-color: var(--podcast-background);
 }
 
 /* Contact form */

@@ -8,7 +8,7 @@
       name="description"
       content="We believe in the transformative power of safe spaces and conversations."
     />
-    <link rel="stylesheet" href="/styles.css" />
+    <link rel="stylesheet" href="/styles.css" media="print" onload="this.media='all'" />
 
     <!-- Fontawesome CDN -->
     <link
@@ -20,12 +20,9 @@
     />
 
     <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=WindSong:wght@400;500&display=swap"
-      rel="stylesheet"
-    />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
     <!-- Bootstrap CDN Link -->
     <link
@@ -40,7 +37,7 @@
     <header class="header">
       <nav class="navbar">
         <div class="logo">
-          <img src="/images/Tullier Main LOGO.png" alt="logo" />
+          <img src="/images/Tullier Main LOGO.png" alt="logo"  loading="lazy" />
         </div>
 
         <ul class="nav-list">
@@ -184,10 +181,7 @@
 
           <p class="lead">
             Welcome to Coffee & Trauma, where vulnerability meets strength over
-            a comforting cup of coffee. Join us each month for an intimate
-            gathering where stories of resilience unfold. Our speakers bravely
-            share their journeys through trauma, offering insights, lessons
-            learned, and their personal survival kit. It's a safe space filled
+            a comforting cup of coffee. It's a safe space filled
             with empathy and understanding, where healing begins one sip at a
             time. Come, sip, and connect as we navigate the complexities of life
             together.
@@ -203,50 +197,6 @@
           </div>
 
           <!-- <a class="btn"> SEE MORE <i class="fa-solid fa-arrow-right"></i> </a> -->
-        </div>
-      </section>
-
-      <section id="rain" class="rain py-5">
-        <div class="container">
-          <h2 class="title-2">BIG FEELINGS? LET IT R.A.I.N</h2>
-
-          <div class="content">
-            <p class="lead">
-              When we tune into out feelings, we can learn to understand and
-              manage them. When those get too big, think of R.A.I.N
-            </p>
-
-            <div class="big-rain text">
-              <p>
-                <i class="fa-regular fa-check-circle"></i>
-                <strong>R: Recognize -</strong>
-                Before you can deal with an emotion, you have to be able to name
-                if. e.g. Oh, there is anger, there is disappointment.
-              </p>
-
-              <p>
-                <i class="fa-regular fa-check-circle"></i>
-                <strong>A: Allow -</strong>
-                Once we have named the feeling, we welcome it non-judgmentally
-                and allow ourselves to feel if. Sit with it.
-              </p>
-
-              <p>
-                <i class="fa-regular fa-check-circle"></i>
-                <strong>I: Interact with others -</strong>
-                Rather than keep it stuffed inside, here we reach out to others
-                for support, and help through the tough ones.
-              </p>
-
-              <p>
-                <i class="fa-regular fa-check-circle"></i>
-                <strong>N: New wave -</strong>
-                Emotions are like wave; they come and go. Here we recognize that
-                we can ride the wave without being swallowed by it, and a new
-                wave will soon appear.
-              </p>
-            </div>
-          </div>
         </div>
       </section>
 
@@ -306,7 +256,7 @@
 
       <section id="ebook" class="ebook py-5">
         <div class="container text-center">
-          <p class="italic-1">Wellness e-book</p>
+          <h2 class="title-2">Resources</h2>
           <h3>KSH. 1000</h3>
 
           <p class="lead">
@@ -413,7 +363,7 @@
           <h2 class="title--2">PROGRAMS</h2>
 
           <p class="lead">
-            Our programs are thoughtfully designed to guid you on a journey of
+            Our programs are thoughtfully designed to guide you on a journey of
             healing from trauma and empowering you with the tools to cultivate
             deep, meaningful connections in your personal and professional life.
             Join us as we embark on a path towards greater self-awareness,
@@ -428,47 +378,8 @@
               loading="lazy"
             />
           </div>
-
-          <!-- <a class="btn">
-						SIGN - UP <i class="fa-solid fa-envelope"></i>
-					</a> -->
-
-          <!-- <a class="btn"> READ MORE <i class="fa-solid fa-arrow-right"></i> </a> -->
         </div>
       </section>
-
-      <section id="french" class="french py-5">
-        <div class="container text-center">
-          <h2 class="title-2">NUNC FAUCIBUS MAGNA SIT AMET PORTTITOP EGET</h2>
-
-          <p class="lead">
-            Amet tellus cras adipiscing enim. Nisi scelerisque ultrices vitae
-            auctor augue. Scelerisque felis imperdiet proin fermentum leo. Sed
-            turpis tincidut aliquet risus feugait. Arcu felis bibendum ut
-            tristique et egestas quis ipsum. Integer vitae justo eget magna.
-          </p>
-
-          <!-- <a class="btn"> ULTRICES <i class="fa-solid fa-arrow-right"></i> </a> -->
-        </div>
-      </section>
-
-      <!-- <section id="podcast" class="podcast py-5">
-				<div class="container text-center">
-					<p class="italic-1">Listen into our</p>
-					<h2 class="title--2"
-						>PODCAST</h2
-					>
-
-					<div>
-						<a class="btn">
-							TULLIER PODCAST
-							<i class="fa-solid fa-play"></i>
-						</a>
-					</div>
-
-					<img src="" alt="podcast" class="img-fluid mt-4" />
-				</div>
-			</section> -->
 
       <section id="contact" class="contact-form py-5">
         <div class="container">
@@ -575,13 +486,13 @@
       </p>
     </footer>
 
-    <script src="/script.js"></script>
+    <script src="/script.js" defer></script>
 
     <!-- Bootstrap CDN Link -->
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-      crossorigin="anonymous"
+      crossorigin="anonymous" defer
     ></script>
   </body>
 </html>
