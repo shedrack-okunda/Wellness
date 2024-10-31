@@ -9,21 +9,22 @@ import User from "./models/User.js";
 import routes from "./routes/routes.js";
 import { fileURLToPath } from "url";
 import path from "path";
+import dotenv from "dotenv";
+dotenv.config();
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const app = express();
+const dbUrl = process.env.MONGODB_URI;
+const port = process.env.PORT || 3000;
 
 // connect to db
 mongoose
-  .connect(
-    "mongodb+srv://okundashedrack:7uIV2r40v8YtBLYW@cluster0.sn33f.mongodb.net/wellness?retryWrites=true&w=majority&appName=Cluster0",
-    {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-    },
-  )
+  .connect(dbUrl, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  })
   .then(() => console.log("connected to db"));
 
 app.use(express.static(path.join(__dirname, "public")));
@@ -76,6 +77,6 @@ app.get("/dashboard", isAuthenticated, (req, res) => {
   res.render("dashboard", { user: req.user });
 });
 
-app.listen(3000, () => {
+app.listen(port, () => {
   console.log("Server started on http://localhost:3000");
 });
