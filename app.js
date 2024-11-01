@@ -77,6 +77,10 @@ app.get("/dashboard", isAuthenticated, (req, res) => {
   res.render("dashboard", { user: req.user });
 });
 
+app.get("/logout", (req, res) => {
+  res.redirect("/login");
+});
+
 app.listen(port, () => {
   console.log("Server started on http://localhost:3000");
 });
