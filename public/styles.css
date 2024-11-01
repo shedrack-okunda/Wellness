@@ -1,9 +1,11 @@
 :root {
-  --primary-color: #f6e4d5;
+  --primary-color: #fef9f5;
   --secondary-color: #c77f5d;
   --text-color: #05010d;
   --heading-color: #3b3430;
-
+  /* #fcf2eb */
+  /* #faedde */
+  /* #f6e4d5 */
   /* button */
   --btn-background: #f1d8cc;
   --btn-hover-background: #f7e5dc;
