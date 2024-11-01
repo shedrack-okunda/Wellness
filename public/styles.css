@@ -156,6 +156,23 @@ img {
   color: var(--btn-text-color) !important;
 }
 
+.logout-button {
+  background-color: var(--btn-background);
+  color: var(--btn-text-color);
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+  border-radius: 5px;
+}
+
+.logout-button:hover {
+  background-color: var(--btn-hover-background);
+}
+
 /* Navigation bar */
 .header .navbar {
   display: flex;
@@ -277,9 +294,28 @@ nav ul li a:hover::after {
   transform: translateY(-10px);
 }
 
+.testimonial-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 15px;
+}
+
+.card-text {
+  margin: 0;
+}
+
 span {
   display: inline-block;
-  font-size: var(--fs-8);
+  font-size: var(--fs-6);
+  font-weight: var(--fw-600);
 }
 
 /* Events */
