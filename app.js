@@ -13,6 +13,8 @@ import path from "path";
 import dotenv from "dotenv";
 dotenv.config();
 import cookieParser from "cookie-parser";
+import nodemailer from "nodemailer";
+import { check, validationResult } from "express-validator";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -20,6 +22,7 @@ const __dirname = path.dirname(__filename);
 const app = express();
 const dbUrl = process.env.MONGODB_URI;
 const port = process.env.PORT || 3000;
+const pass = process.env.PASS;
 
 // connect to db
 mongoose
@@ -127,6 +130,47 @@ app.get("/logout", (req, res) => {
   res.clearCookie("authToken"); //clear the JWT cookie on logout
   res.redirect("/login");
 });
+
+// contact form
+app.post(
+  "/send",
+  [
+    check("name").notEmpty().withMessage("Name is required"),
+    check("email").isEmail().withMessage("Invalid Email Address"),
+    check("subject").notEmpty().withMessage("Subject is required"),
+    check("message").notEmpty().withMessage("Message is required"),
+  ],
+  (req, res) => {
+    const errors = validationResult(req);
+
+    if (!errors.isEmpty()) {
+      res.render("dashboard", { errors: errors.mapped() });
+    } else {
+      const transporter = nodemailer.createTransport({
+        service: "Gmail",
+        auth: {
+          user: "okundashedrack@gmail.com",
+          pass: pass,
+        },
+      });
+
+      const mailOption = {
+        from: req.body.email,
+        to: "okundashedrack@gmail.com",
+        subject: req.body.subject,
+        text: req.body.message,
+      };
+
+      transporter.sendMail(mailOption, (error, info) => {
+        if (error) {
+          console.log(error);
+        } else {
+          res.redirect("/dashboard");
+        }
+      });
+    }
+  },
+);
 
 app.listen(port, () => {
   console.log("Server started on http://localhost:3000");
