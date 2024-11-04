@@ -50,27 +50,6 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-document.addEventListener("DOMContentLoaded", () => {
-  const form = document.getElementById("form");
-  const btn = document.getElementById("button");
-
-  form.addEventListener("submit", (e) => {
-    e.preventDefault();
-
-    const formData = new FormData(form);
-    formData.forEach((value, key) => {
-      console.log(`${key}: ${value}`);
-    });
-
-    btn.value = "Sending...";
-
-    setTimeout(() => {
-      form.reset();
-      btn.value = "SEND";
-    }, 2000);
-  });
-});
-
 // footer
 const year = document.getElementById("current-year");
 year.innerHTML = new Date().getFullYear();
