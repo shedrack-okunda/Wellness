@@ -427,7 +427,7 @@
               </div>
             </div>
 
-            <form action="" id="form">
+            <form method="post" action="/send" id="form">
               <label for="name" class="sr-only"></label>
               <input
                 type="text"
@@ -450,6 +450,9 @@
                 required
               />
 
+              <label for="subject" class="sr-only"></label>
+              <input type="text" class="input" id="subject" name='subject' placeholder='Enter the subject' required>
+
               <label for="message" class="sr-only"></label>
               <textarea
                 name="message"
@@ -460,10 +463,6 @@
               ></textarea>
 
               <div class="action">
-                <!-- <button class="btn btn-form" id="button" type="submit">
-                  SUBMIT <i class="fas fa-arrow-right"></i>
-                </button> -->
-
                 <input
                   class="btn btn-form"
                   id="button"
