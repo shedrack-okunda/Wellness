@@ -73,7 +73,7 @@ body {
 
 /* Reused styles */
 .container {
-  padding-top: 60px;
+  padding-top: 50px;
 }
 
 .title-1 {
@@ -156,69 +156,6 @@ img {
 .btn:hover {
   background-color: var(--btn-hover-background) !important;
   color: var(--btn-text-color) !important;
-}
-
-.e-book {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 20px;
-}
-
-.product {
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  overflow: hidden;
-  background: var(--rain-background);
-  transition: transform 0.2s;
-}
-
-.product:hover {
-  cursor: pointer;
-}
-
-.product img {
-  width: 100%;
-  height: 250px;
-  object-fit: cover;
-}
-
-.product-details {
-  padding: 15px;
-}
-
-.e-book .product-details h3 {
-  margin: 0 10px 0;
-  font-size: var(--fs-4);
-  color: var(--btn-text-color);
-}
-
-.e-book .product-details p {
-  margin: 5px 0;
-  font-size: var(--fs-8);
-  color: var(--text-color);
-}
-
-.e-book .product-details .product-price {
-  color: var(--btn-text-color);
-  font-weight: var(--fw-600);
-  margin-top: 10px;
-  font-size: var(--fs-6);
-}
-
-.add-to-cart {
-  background-color: var(--btn-background);
-  color: var(--btn-text-color);
-  border: none;
-  font-weight: var(--fw-600);
-  font-size: var(--fs-6);
-  padding: 10px;
-  margin-top: 10px;
-  cursor: pointer;
-  border-radius: 4px;
-}
-
-.add-to-cart:hover {
-  background-color: var(--btn-hover-background);
 }
 
 /* Navigation bar */
@@ -408,6 +345,69 @@ span {
 .ebook .btn:hover {
   background-color: var(--btn-hover-background);
   color: var(--btn-text-color);
+}
+
+.e-book {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.product {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  background: var(--rain-background);
+  transition: transform 0.2s;
+}
+
+.product:hover {
+  cursor: pointer;
+}
+
+.product img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+
+.product-details {
+  padding: 15px;
+}
+
+.e-book .product-details h3 {
+  margin: 0 10px 0;
+  font-size: var(--fs-4);
+  color: var(--btn-text-color);
+}
+
+.e-book .product-details p {
+  margin: 5px 0;
+  font-size: var(--fs-8);
+  color: var(--text-color);
+}
+
+.e-book .product-details .product-price {
+  color: var(--btn-text-color);
+  font-weight: var(--fw-600);
+  margin-top: 10px;
+  font-size: var(--fs-6);
+}
+
+.add-to-cart {
+  background-color: var(--btn-background);
+  color: var(--btn-text-color);
+  border: none;
+  font-weight: var(--fw-600);
+  font-size: var(--fs-6);
+  padding: 10px;
+  margin-top: 10px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.add-to-cart:hover {
+  background-color: var(--btn-hover-background);
 }
 
 /* Order Form */

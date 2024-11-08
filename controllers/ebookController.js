@@ -1,4 +1,5 @@
 import axios from "axios";
+import Transaction from "../models/transaction.js";
 
 let token;
 
@@ -37,11 +38,15 @@ export const createToken = async (req, res, next) => {
 };
 
 export const stkPush = async (req, res) => {
-  console.log("req.body in second");
-  console.log(req.body);
   const shortCode = 174379;
-  const phone = req.body.Phone.substring(1);
+  const phone = req.body.phone.substring(1);
   const amount = req.body.amount;
+  const name = req.body.name;
+  const address = req.body.address;
+
+  if (!phone || !name || !address) {
+    return res.status(400).json({ error: "All fields are required." });
+  }
 
   const passkey =
     "bfb279f9aa9bdbcf158e97dd71a467cd2e0c893059b10f78e6b72ada1ed2c919";
@@ -72,18 +77,32 @@ export const stkPush = async (req, res) => {
     TransactionDesc: "Testing stk push",
   };
 
-  await axios
-    .post(url, data, {
+  const transaction = new Transaction({
+    name,
+    address,
+    phone: `254${phone}`,
+    amount,
+    timestamp: date,
+  });
+
+  try {
+    const response = await await axios.post(url, data, {
       headers: {
         authorization: `Bearer ${token}`,
       },
-    })
-    .then((data) => {
-      console.log(data);
-      res.status(200).json(data.data);
-    })
-    .catch((err) => {
-      console.log(err);
-      res.status(400).json(err);
     });
+
+    transaction.status = "Pending";
+    await transaction.save();
+    res.status(200).json({
+      message: "Payment request sent successfully.",
+      data: response.data,
+    });
+  } catch (err) {
+    console.log("Error sending STK push:", err);
+
+    transaction.status = "Failed";
+    await transaction.save();
+    res.status(400).json({ error: "Failed to process payment." });
+  }
 };

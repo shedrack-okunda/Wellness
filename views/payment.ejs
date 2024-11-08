@@ -17,7 +17,8 @@
       button {
         position: absolute;
         display: flex;
-        margin-left: 50px;
+        align-items: center;
+        margin-left: 100px;
         padding: 10px 20px;
         border-radius: 5px;
         border: 1px solid var(--theme-color);
@@ -36,54 +37,87 @@
       }
 
       .input {
+        display: flex;
+        justify-content: center;
         margin-top: 5px;
+        width: 300px;
       }
     </style>
   </head>
   <body>
     <div class="container">
       <h2 class="title-1">Payment</h2>
-      <p class="title--2">Total Amount: Kshs <span id="totalAmount"></span></p>
+      <p class="title--2">Total Amount: Kshs <span id="total-price"></span></p>
       <form id="paymentForm" onsubmit="processPayment(event)">
         <input
           type="text"
           class="input"
-          id="phone"
-          placeholder="Enter your phone number"
+          id="name"
+          placeholder="Enter your name"
           required
         />
-        <button type="submit">Pay</button>
+
+        <input
+          type="text"
+          class="input"
+          id="address"
+          placeholder="Enter Shipping Address"
+          required
+        />
+
+        <input
+          type="text"
+          class="input"
+          id="phone"
+          placeholder="Enter MPESA phone number"
+          required
+        />
+        <button type="submit" id="payBtn">Pay</button>
       </form>
     </div>
 
     <script>
       // Load the total amount from localStorage
-      document.getElementById("totalAmount").textContent =
+      document.getElementById("total-price").textContent =
         localStorage.getItem("bookPrice");
 
-      function processPayment(event) {
-        event.preventDefault();
-        const phone = document.getElementById("phone").value;
+      document
+        .getElementById("payBtn")
+        .addEventListener("click", async function () {
+          const name = document.getElementById("name").value;
+          const address = document.getElementById("address").value;
+          const phone = document.getElementById("phone").value;
+          const totalPrice = localStorage.getItem("bookPrice");
 
-        fetch("http://localhost:3000/process-payment", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            phone,
-            amount: localStorage.getItem("bookPrice"),
-          }),
-        })
-          .then((response) => response.json())
-          .then((data) => {
-            if (data.message === "Payment initiated") {
-              alert("Check your phone for the payment request");
+          if (!phone || !name || !address) {
+            alert("Please fill in all the fields.");
+            return;
+          }
+
+          try {
+            const response = await fetch("/process-payment", {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify({
+                name: name,
+                address: address,
+                phone: phone,
+                amount: totalPrice,
+              }),
+            });
+
+            if (response.ok) {
+              alert("Payment request sent successfully.");
             } else {
-              alert("Payment failed");
+              alert("Failed to process payment.");
             }
-          });
-      }
+          } catch (error) {
+            console.error("Error:", error);
+            alert("Processing the payment done.");
+          }
+        });
     </script>
   </body>
 </html>
