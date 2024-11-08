@@ -5,19 +5,56 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Payment</title>
+    <link rel="stylesheet" href="/styles.css" />
+    <style>
+      .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+
+      button {
+        position: absolute;
+        display: flex;
+        margin-left: 50px;
+        padding: 10px 20px;
+        border-radius: 5px;
+        border: 1px solid var(--theme-color);
+        background-color: var(--btn-background);
+        color: var(--btn-text-color);
+        font-size: var(--fs-5);
+        font-weight: var(--fw-600);
+      }
+
+      button:hover {
+        background-color: var(--btn-hover-background);
+      }
+
+      .title--2 {
+        margin-top: 0;
+      }
+
+      .input {
+        margin-top: 5px;
+      }
+    </style>
   </head>
   <body>
-    <h2>Payment</h2>
-    <p>Total Amount: Kshs <span id="totalAmount"></span></p>
-    <form id="paymentForm" onsubmit="processPayment(event)">
-      <input
-        type="text"
-        id="phone"
-        placeholder="Enter your phone number"
-        required
-      />
-      <button type="submit">Send</button>
-    </form>
+    <div class="container">
+      <h2 class="title-1">Payment</h2>
+      <p class="title--2">Total Amount: Kshs <span id="totalAmount"></span></p>
+      <form id="paymentForm" onsubmit="processPayment(event)">
+        <input
+          type="text"
+          class="input"
+          id="phone"
+          placeholder="Enter your phone number"
+          required
+        />
+        <button type="submit">Pay</button>
+      </form>
+    </div>
 
     <script>
       // Load the total amount from localStorage
