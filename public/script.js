@@ -27,6 +27,10 @@ function takeToPayment() {
   window.location.href = "/payment";
 }
 
+window.addEventListener("load", function () {
+  document.getElementById("spinner").style.display = "none";
+});
+
 // footer
 const year = document.getElementById("current-year");
 year.innerHTML = new Date().getFullYear();
