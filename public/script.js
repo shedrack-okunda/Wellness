@@ -21,34 +21,11 @@ window.addEventListener("scroll", () => {
     : header.classList.remove("sticky");
 });
 
-// Order Form
-document.addEventListener("DOMContentLoaded", () => {
-  const orderBtn = document.getElementById("orderBtn");
-  const closeOrderBtn = document.getElementById("close-order");
-  const orderFormContainer = document.querySelector(".order-form");
-  const orderForm = document.getElementById("orderForm");
+function takeToPayment() {
+  localStorage.setItem("bookPrice", 1000);
 
-  orderBtn.addEventListener("click", () => {
-    orderFormContainer.style.display = "block";
-  });
-
-  closeOrderBtn.addEventListener("click", () => {
-    orderFormContainer.style.display = "none";
-  });
-
-  orderForm.addEventListener("submit", (e) => {
-    e.preventDefault();
-
-    const formData = new FormData(orderForm);
-    formData.forEach((value, key) => {
-      console.log(`${key}: ${value}`);
-    });
-
-    setTimeout(() => {
-      orderForm.reset();
-    }, 2000);
-  });
-});
+  window.location.href = "/payment";
+}
 
 // footer
 const year = document.getElementById("current-year");

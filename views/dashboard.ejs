@@ -56,8 +56,6 @@
           <li><a href="#contact">Contact Us</a></li>
         </ul>
 
-        <a href="/logout"><button class="logout-button">Logout</button></a>
-
         <div class="icon menu-btn">
           <i class="fa-solid fa-bars"></i>
         </div>
@@ -285,75 +283,26 @@
             </p>
           </div>
 
-          <a class="btn" id="orderBtn">
-            BUY NOW <i class="fa-solid fa-cart-shopping"></i>
-          </a>
+          <div class="e-book">
+            <div class="product">
+              <img src="/images/ebook.png" alt="ebook">
 
-          <div class="order-form">
-            <div class="orderForm">
-              <h2 class="title-2 text-center">Wellness e-book</h2>
-              <h3 class="title--2">Shipping Address</h3>
+              <div class="product-details">
+                <h3>Wellness e-book</h3>
 
-              <form action="" id="orderForm">
-                <div class="form-row">
-                  <div class="form-group">
-                    <label for="fullname" class="sr-only">Full Name</label>
-                    <input
-                      type="text"
-                      class="input"
-                      id="fullname"
-                      name="name"
-                      placeholder="Your name"
-                      autocomplete="name"
-                      required
-                    />
-                  </div>
+                <p>Are you aware of how
+                  to tackle your wellness? Dive deep into some insight with
+                  this book.
+                </p>
 
-                  <div class="form-group">
-                    <label for="email" class="sr-only">Email</label>
-                    <input
-                      type="email"
-                      id="fullemail"
-                      class="input"
-                      name="email"
-                      autocomplete="email"
-                      placeholder="Your email"
-                      required
-                    />
-                  </div>
-                </div>
+                <p class="product-price">Kshs 1000</p>
 
-                <div class="form-row">
-                  <div class="form-group">
-                    <label for="address" class="sr-only">Address</label>
-                    <input
-                      type="text"
-                      class="input"
-                      id="address"
-                      name="address"
-                      placeholder="Street address"
-                      autocomplete="address-line1"
-                      required
-                    />
-                  </div>
-
-                  <div class="form-group">
-                    <label for="city" class="sr-only">City</label>
-                    <input
-                      type="text"
-                      class="input"
-                      name="city"
-                      id="city"
-                      placeholder="City name"
-                      required
-                    />
-                  </div>
-                </div>
-
-                <button type="submit" class="btn">Submit Order</button>
-              </form>
-
-              <button id="close-order">&times;</button>
+                <button type="button" class="add-to-cart" onclick="takeToPayment()">
+                  Buy Now
+                  <i class="fa-solid fa-cart-shopping"></i>
+                </button>
+              </div>
+              
             </div>
           </div>
         </div>

@@ -1,0 +1,52 @@
+<!-- payment.html -->
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Payment</title>
+  </head>
+  <body>
+    <h2>Payment</h2>
+    <p>Total Amount: Kshs <span id="totalAmount"></span></p>
+    <form id="paymentForm" onsubmit="processPayment(event)">
+      <input
+        type="text"
+        id="phone"
+        placeholder="Enter your phone number"
+        required
+      />
+      <button type="submit">Send</button>
+    </form>
+
+    <script>
+      // Load the total amount from localStorage
+      document.getElementById("totalAmount").textContent =
+        localStorage.getItem("bookPrice");
+
+      function processPayment(event) {
+        event.preventDefault();
+        const phone = document.getElementById("phone").value;
+
+        fetch("http://localhost:3000/process-payment", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            phone,
+            amount: localStorage.getItem("bookPrice"),
+          }),
+        })
+          .then((response) => response.json())
+          .then((data) => {
+            if (data.message === "Payment initiated") {
+              alert("Check your phone for the payment request");
+            } else {
+              alert("Payment failed");
+            }
+          });
+      }
+    </script>
+  </body>
+</html>

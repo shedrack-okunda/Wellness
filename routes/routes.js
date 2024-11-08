@@ -1,8 +1,7 @@
 import express from "express";
-import { editUser, getUsers } from "../controllers/userController.js";
+import { createToken, stkPush } from "../controllers/ebookController.js";
 const router = express.Router();
 
-router.get("/getUsers", getUsers);
-router.post("/editUser", editUser);
+router.post("/process-payment", createToken, stkPush);
 
 export default router;
