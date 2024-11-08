@@ -117,7 +117,7 @@ body {
 
 .lead {
   text-align: left;
-  margin-top: 30px;
+  margin-top: 20px;
   font-size: var(--fs-5) !important;
 }
 
@@ -135,7 +135,7 @@ body {
 
 .text {
   text-align: left;
-  margin: 30px;
+  margin: 20px;
   font-size: var(--fs-8);
 }
 
@@ -441,64 +441,6 @@ span {
   background-color: var(--btn-hover-background);
 }
 
-/* Order Form */
-.order-form {
-  display: none;
-  position: fixed;
-  color: #111;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.8);
-  z-index: 9999;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-  animation: fadeIn 0.5s ease forwards;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-.orderForm {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  background-color: #fff;
-  padding: 20px;
-  border-radius: 10px;
-  transform: translate(-50%, -50%);
-  animation: slideIn 0.5s ease forwards;
-}
-
-@keyframes slideIn {
-  from {
-    transform: translate(-50%, -200%);
-  }
-  to {
-    transform: translate(-50%, -50%);
-  }
-}
-
-#close-order {
-  position: fixed;
-  top: 0;
-  right: 5px;
-  background: none;
-  border: none;
-  font-size: var(--fs-2);
-  font-weight: var(--fw-700);
-  color: var(--btn-text-color);
-  cursor: pointer;
-}
-
 /* Contact form */
 .contact-form {
   padding-block-end: 0;
@@ -581,6 +523,42 @@ textarea.input {
 }
 
 /* Media queries */
+@media (max-width: 768px) {
+  .bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--primary-color);
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .bottom-nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+  }
+
+  .bottom-nav li {
+    display: inline;
+  }
+
+  .bottom-nav a {
+    color: var(--btn-text-color);
+    font-size: 24px;
+    text-decoration: none;
+  }
+
+  .bottom-nav a:hover {
+    color: var(--btn-background);
+  }
+}
+
 @media (min-width: 992px) {
   .imgBox {
     max-width: 50%;
